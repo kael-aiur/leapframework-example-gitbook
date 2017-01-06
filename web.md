@@ -94,4 +94,36 @@
 </dependencies>
 ```
 
+在`conf/config.xml`中配置了：
 
+```xml
+<base-package>leap.example.web</base-package>
+```
+
+表示leap扫描的包。
+
+这个示例中集成了`logback`日志框架，`logback.xml`是日志配置。
+
+`webapp/WEB-INF/web.xml`中配置了leap的拦截器：
+
+```xml
+<filter>
+	<filter-name>app-filter</filter-name>
+    <filter-class>leap.web.AppFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>app-filter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>	
+```
+
+这就是leap的web工程最基础的配置，有了这些配置leap就可以使用了。
+
+`leap.example.web.Global`类是应用的启动类，类名是leap默认且固定的，并且只能在配置的`base-package`下，不能是子包。
+
+`leap.example.web.controller.HomeController`是示例的控制器，把这个应用部署到tomcat下并访问应用根路径即可看到：
+
+```
+hello leap!
+```
