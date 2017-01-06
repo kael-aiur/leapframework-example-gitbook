@@ -8,3 +8,17 @@
 
 leap可以非常方便的支持多数据源，这里四个数据源分别为`default`，`datasource1`，`datasource2`，`datasource3`。
 
+这里用`primary="true"`表示`default`数据源是主要数据源，如果Model没有指定数据源的话，默认会使用这个数据源。
+
+整个示例工程一共有四个Model:
+
+```java
+leap.example.datasource.model.Datasource1Model
+leap.example.datasource.model.Datasource2Model
+leap.example.datasource.model.datasource3.Datasource3Model
+leap.example.datasource.model.DatasourceDefaultModel
+```
+
+这里，`leap.example.datasource.model.Datasource2Model`通过`@DataSource("datasource2")`注解指定为数据源`datasource2`。
+
+
