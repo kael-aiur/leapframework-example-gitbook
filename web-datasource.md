@@ -21,4 +21,12 @@ leap.example.datasource.model.DatasourceDefaultModel
 
 这里，`leap.example.datasource.model.Datasource2Model`通过`@DataSource("datasource2")`注解指定为数据源`datasource2`。
 
+`leap.example.datasource.model.DatasourceDefaultModel`没有指定数据源，会使用默认的`default`数据源。
 
+而`leap.example.datasource.model.datasource3.Datasource3Model`通过`config.xml`的配置指定为数据源`datasource3`:
+
+```xml
+<orm:models datasource="datasource3">
+    <orm:package name="leap.example.datasource.model.datasource3"/>
+</orm:models>
+```
