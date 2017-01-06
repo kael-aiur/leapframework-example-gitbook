@@ -30,3 +30,6 @@ leap.example.datasource.model.DatasourceDefaultModel
     <orm:package name="leap.example.datasource.model.datasource3"/>
 </orm:models>
 ```
+
+这里的配置是值所有在包`leap.example.datasource.model.datasource3`下的类都使用`datasource3`作为数据源。
+
