@@ -52,5 +52,3 @@ leap.example.web.interceptor.AnnotationInterceptor
 > * 通过主动new对象
 > * 通过注解
 
-
-
