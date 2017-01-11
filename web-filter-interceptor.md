@@ -52,3 +52,16 @@ leap.example.web.interceptor.AnnotationInterceptor
 > * 通过主动new对象
 > * 通过注解
 
+在`leap.example.web.filter`包下，有一个类：
+
+```java
+leap.example.web.filter.RequestFilter
+```
+
+这个是leap的filter，它的设计类似J2EE的Filter设计，每执行完一个Filter，如果需要继续执行下一个Filter，需要主动调用：
+
+```java
+filterChain.doFilter(request,response);
+```
+
+如果不调用则不会执行。
