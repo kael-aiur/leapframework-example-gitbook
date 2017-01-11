@@ -38,3 +38,5 @@ preAppStart -> start -> postAppStart。
 ```
 preAppStop -> stop -> postAppStop
 ```
+
+一般来说，leap的启动是在leap的拦截器初始化的时候进行的，但是我们有时候需要在leap的拦截器之前添加拦截器，如`leap.example.weblistener.filter.BeforeAppFilter`，这个时候leap还没有启动，因此是无法使用leap中配置的bean的，这里leap提供了web listener：`leap.web.AppBootstrap`，通过配置这个监听器（参考`web.xml`）可以在所有filter启动之前启动leap，这样就可以在leap的拦截器之前使用leap的功能了。
